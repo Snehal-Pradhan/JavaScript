@@ -33,3 +33,25 @@ const myFunction = function(){
 
 console.log(typeof myFunction) // type => object funtion
  // https://262.ecma-international.org/5.1/#sec-11.4.3
+
+
+ //***********************************************************
+
+
+ // Stack memory => (Primitive), Heap => (Non-Primitive)
+ // Stack => works on a copy
+ // heap => works on the reference file. 
+ let petName ="harry";
+ let anotherName = petName;
+ anotherName = "george";
+console.log(petName);
+console.log(anotherName);
+let userOne = {
+    email:"user@google.com",
+    upi: "user@ybl"
+}
+let userTwo = userOne
+userTwo.email = "somu@google.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
