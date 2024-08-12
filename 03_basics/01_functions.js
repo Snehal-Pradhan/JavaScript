@@ -51,6 +51,7 @@ function calculateCartPrice(val1 ,val2 ,...num1){
 
 //console.log(calculateCartPrice(200,400,500,600))
 
+//// ...num1 => rest operator and sometimes spread operator
 const user = {
     username: "somu",
     price : 199
