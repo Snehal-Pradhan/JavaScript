@@ -42,4 +42,11 @@ result2 -> undefined
   // again memory phase and execution phase takes place
   /* val1 val2 total => undefned // then execution takes place // then it is deleted
   // total is returned in Global executional context
-  
+---------------------------------------------------------------------------------------------
+New Variable Environment + thread -> memory phase & execution phase
+
+
+--------------------------------------------------------------------------------------------
+Call Stack
+Last in first out => LIFO
+base - global execution 
