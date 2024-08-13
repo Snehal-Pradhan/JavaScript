@@ -1,0 +1,45 @@
+JavaScript Execution context
+
+
+// whenever a code is provided.The first and foremost thing to form is Global EC 
+{} -> Global Execution context
+// this variable is assigned to Global Execution context
+ 1. Global EC
+ 2. Function EC
+ 3. EVAL EC -> 
+
+
+js works in two phases;
+{} -> 1.Memory Creation Phase  -> 2.Execution Phase 
+
+
+example =>
+let val1 = 10
+let val2 = 5
+funtion addNum(num1,num2){
+    let total = num1+num2
+    return total
+}
+let result1 = addNum(val1,val2)
+let result2 = addNum(10,2)
+
+
+
+steps in which this code is executed;
+1. Global Execution or Global Environment - stored in this 
+2. Memory phase - all variables stored.
+val1 -> undefined
+Val2 -> undefined  
+addNum -> defination   // Function is stored as defination
+result1 -> undefined
+result2 -> undefined
+---------------------------- memory Creation phase completed -------
+3. execution phase
+  val1 -> 10
+  val2 -> 5
+  // no work on functions like addnum in execution phase, all work done in 1st cycle
+  addNum -> creates a seperate execution context -> new variabl environment/sandbox is creates + execution thread
+  // again memory phase and execution phase takes place
+  /* val1 val2 total => undefned // then execution takes place // then it is deleted
+  // total is returned in Global executional context
+  
