@@ -9,3 +9,5 @@
 
 // < > , <= , >= , == ,!= ,!==, === => with type check also;
 // also learnt about if else;
+// && 
+// ||
