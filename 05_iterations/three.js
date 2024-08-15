@@ -13,11 +13,7 @@ const greetings = "Hello World!"
 
 // Maps
 
-const map = new Map()
-map.set('IN' ,"India")
-map.set('US',"United States")
-map.set('FR',"France")
-map.set('IN' ,"India")
+C
 // works on unique value 
 //console.log(map)
 
