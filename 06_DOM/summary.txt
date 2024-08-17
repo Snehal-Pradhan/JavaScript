@@ -1,0 +1,16 @@
+window => document => html
+html has 2 children => head & body
+//
+
+
+head => title + meta
+title => has a text node
+meta => attribute
+
+//
+body => div => h1 + para
+div has some attributes
+h1 => text node + attribute
+p => textnode
+
+// document.getElementById('')
