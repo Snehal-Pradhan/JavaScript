@@ -1,0 +1,36 @@
+getElementByID("")
+getElementByclassName("")  // class => className
+.getAttribute("")
+.setAttribute("") => makes changes in attributes
+title.innerText => shows the visible textContent
+// if a tag has display none it will not be seen in innerText but will be available in textContent
+title.innerHTML => shows html tags in the tag also
+title.textContent => explained above
+
+document.getElementByclassName("")=> may give a list of getElementByclassName
+- these elements are not in an array => they are in a HTMLCollections which is slightl different from an array
+
+
+document.querySelector("h1") => provides first h1 tag
+
+document.querySelectorAll("h2") => provides a nodelist => not an array
+for it for each is available but map is mot available
+
+
+use prototype for all the functions you can perform.
+
+
+nodelist[2] => using index can be used . not exactly an array . but has a lot of properties similar to an array.
+
+
+
+.forEach can be used on a nodelist to change element properties.
+to use map => change nodelist to an array.
+
+
+Array.from.(.....nodelist or ...HTMLCollections) => convert it into an array.
+
+
+later can use map and forEach.
+
+
