@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif;display: flex;flex-direction:column-reverse;">
+<p>0 UNSENT Client has been created. open() not called yet.</p>
+<p>1 OPENED open() has been called.</p>
+<p>2 HEADERS_RECEIVED send() has been called, and headers and status are available.</p>
+<p>3 LOADING Downloading; responseText holds partial data.</p>
+<p>4 DONE The operation is complete.</p>    
+</body>
+<script>
+    /*const requestURL = 'https://api.github.com/users/Snehal-Pradhan';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET',requestURL);
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+     if(xhr.readyState===4){
+        console.log("working");
+        const data= JSON.parse(this.responseText);
+        addCardElement(data);
+    }
+    xhr.send();*/
+    
+    /*const requestUrl = 'https://api.github.com/users/Snehal-Pradhan'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl);
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText);
+            addCardElement(data);
+            console.log(data.followers);
+        }
+    }
+    xhr.send();
+    
+   */
+
+   const requestURL = 'https://api.github.com/users/Snehal-Pradhan';
+const xhr = new XMLHttpRequest();
+xhr.open('GET', requestURL);
+xhr.onreadystatechange = function() {
+    console.log(xhr.readyState);
+    if (xhr.readyState === 4) {
+        const data = JSON.parse(this.responseText);
+        addCardElement(data);
+        console.log(data.followers);  // Added this line to match the second code chunk
+    }
+}
+xhr.send();
+
+
+    const addCardElement = (data)=>{
+        const card  = document.createElement('div');
+        const dp = document.createElement('div');
+        const name = document.createElement('div');
+        const followersNum = document.createElement('div');
+
+        card.style.backgroundColor="#212121";
+        card.style.borderRadius="0.5rem";
+        dp.style.borderRadius="0.5rem";
+        dp.style.border="0.2rem solid black";
+        dp.style.padding="0 rem";
+        dp.style.height="100px";
+        dp.style.width="100px";
+        dp.style.margin="1rem";
+        card.style.color="white";
+        card.style.alignItems="center";
+        card.style.display="flex";
+        card.style.flexDirection="column";
+        card.style.width="13rem";
+        card.style.height="13rem";
+        card.style.alignSelf="center";
+    
+        dp.innerHTML=`<img src=${data.avatar_url} alt="" height="100px">`;
+        name.innerText=`${data.name}`;
+        followersNum.innerText=`${data.followers} followers`;
+        card.appendChild(dp);
+        card.appendChild(name);
+        card.appendChild(followersNum);
+
+        document.body.appendChild(card);
+
+    }
+
+
+
+
+</script>
+</html>
