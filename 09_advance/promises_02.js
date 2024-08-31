@@ -1,4 +1,4 @@
-const PromiseOne = new Promise (function(resolve,reject){
+/* const PromiseOne = new Promise (function(resolve,reject){
     //db calls
     // cryptography 
     // network calls
@@ -29,8 +29,8 @@ const PromiseThree = new Promise (function(resolve,reject){
         resolve({username:"somu",age:18,weight:67,unit:"kg"})
     },1000)
 })
-
-PromiseThree.then(function(user){
+ */
+/* PromiseThree.then(function(user){
     console.log(user);
 })
 
@@ -57,4 +57,55 @@ PromiseFour.then(function(user){
 })
 .finally(()=>{
     console.log("promise is either resolved or rejected.")
+}) */
+const PromiseFive = new Promise((resolve, reject) => {
+    setTimeout(function(){
+        let error = false;
+        if(!error){
+             console.log("5th promise");
+             resolve({
+            username:"somu",age:19,weight:68,unit:"kg"
+        });
+        }
+        else{
+            reject(`ERROR: something went wrong.`);
+        }
+    },1000)
 })
+
+const consumePromiseFive = async function () {
+    try {
+      const response = await PromiseFive;
+      console.log(response);  
+    } catch (error) {
+        console.log(`something went wrong`);
+    }
+    
+}
+
+consumePromiseFive();
+/* 
+async function getAllUsers() {
+    try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    const data = await response.json()
+    console.log(data)
+    } catch (error) {
+        console.log("ERROR : Something went wrong.");
+    }
+    
+}
+
+ */
+
+ fetch('https://jsonplaceholder.typicode.com/users')
+ .then(function(response){
+     return response.json();
+ })
+ .then((data)=>{
+    console.log(data)
+ })
+ .catch(()=>{
+    console.log("ERROR");
+ })
+
